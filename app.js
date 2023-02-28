@@ -5,6 +5,7 @@ const port = 3000
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("Public"));
 
 let items = ["Buy Food", "Cook Food", "It Food"];
 
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
     month: "long"
   };
 
-  var let = today.toLocaleDateString("en-US", options);
+  let day = today.toLocaleDateString("en-US", options);
  
   
  
